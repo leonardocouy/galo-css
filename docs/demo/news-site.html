@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias - DEMO Transformação GaloDoido.css</title>
+    <style>
+        /* ====================================
+           ESTILOS ORIGINAIS DO "PORTAL"
+           (Antes do GaloDoido.css)
+           ==================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header colorido */
+        .site-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .site-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .site-header .tagline {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Navegação colorida */
+        .site-nav {
+            background-color: #4a5568;
+            padding: 15px 0;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        .site-nav a {
+            color: #63b3ed;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .site-nav a:hover {
+            color: #90cdf4;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Grid de notícias */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Card de notícia */
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .news-card .category {
+            background-color: #f56565;
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .news-card.sports .category {
+            background-color: #48bb78;
+        }
+
+        .news-card.tech .category {
+            background-color: #4299e1;
+        }
+
+        .news-card .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #ffa07a, #ff6347);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .news-card.sports .image-placeholder {
+            background: linear-gradient(135deg, #90ee90, #32cd32);
+        }
+
+        .news-card.tech .image-placeholder {
+            background: linear-gradient(135deg, #87ceeb, #4682b4);
+        }
+
+        .news-card .content {
+            padding: 20px;
+        }
+
+        .news-card h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .news-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .news-card .meta {
+            font-size: 0.85em;
+            color: #718096;
+        }
+
+        .news-card .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-card .read-more:hover {
+            color: #2b6cb0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #edf2f7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #cbd5e0;
+        }
+
+        .sidebar a {
+            color: #4a5568;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #2d3748;
+        }
+
+        /* Banner lateral */
+        .ad-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .ad-banner h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Footer colorido */
+        .site-footer {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .site-footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        /* Toggle button para GaloDoido */
+        .galo-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #000;
+            color: #fff;
+            border: 3px solid #fff;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .galo-toggle:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Elementos rivais (serão bloqueados) */
+        .cruzeiro-ad {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .blue-section {
+            background-color: #4a90e2;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+
+    <!-- GALODOIDO.CSS - COMENTADO POR PADRÃO -->
+    <!-- Descomente a linha abaixo para ativar a transformação -->
+    <!-- <link rel="stylesheet" href="../../galodoido.css"> -->
+
+    <script>
+        // Toggle para ativar/desativar GaloDoido.css dinamicamente
+        function toggleGaloDoido() {
+            const existingLink = document.querySelector('link[href*="galodoido"]');
+
+            if (existingLink) {
+                existingLink.remove();
+                document.querySelector('.galo-toggle').textContent = '🐓 ATIVAR GaloDoido.css';
+                document.body.style.transition = 'all 0.5s ease';
+            } else {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '../../galodoido.css';
+                document.head.appendChild(link);
+                document.querySelector('.galo-toggle').textContent = '❌ DESATIVAR GaloDoido.css';
+                setTimeout(() => {
+                    alert('🐓 SITE GALOIZADO! Aqui é Galo!');
+                }, 100);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- BOTÃO TOGGLE -->
+    <button class="galo-toggle" onclick="toggleGaloDoido()">🐓 ATIVAR GaloDoido.css</button>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <h1>Portal de Notícias 24h</h1>
+            <p class="tagline">Seu portal de informação completa</p>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="site-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">Notícias</a></li>
+            <li><a href="#sports">Esportes</a></li>
+            <li><a href="#tech">Tecnologia</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="container">
+
+        <!-- DESTAQUE: NOTÍCIA PRINCIPAL -->
+        <div class="news-card" style="margin-bottom: 30px;">
+            <div class="category">Destaque do Dia</div>
+            <div class="image-placeholder">
+                🖼️ Imagem de Destaque
+            </div>
+            <div class="content">
+                <h2>Grande título da notícia principal que chamará sua atenção</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Esta é uma notícia colorida e vibrante que será transformada em P&B.
+                </p>
+                <div class="meta">Por João Silva | 08/01/2026 às 14:30</div>
+                <a href="#" class="read-more">Leia mais →</a>
+            </div>
+        </div>
+
+        <!-- GRID DE NOTÍCIAS -->
+        <h2 style="margin-bottom: 20px; color: #2d3748;">Últimas Notícias</h2>
+        <div class="news-grid">
+
+            <!-- Notícia 1 -->
+            <div class="news-card">
+                <div class="category">Política</div>
+                <div class="image-placeholder">
+                    📰 Imagem Política
+                </div>
+                <div class="content">
+                    <h2>Governo anuncia novas medidas econômicas</h2>
+                    <p>Pacote de medidas visa estimular a economia e reduzir impostos.</p>
+                    <div class="meta">Por Maria Santos | Hoje</div>
+                    <a href="#" class="read-more">Leia mais →</a>
+                </div>
+            </div>
+
+            <!-- Notícia 2 - Esportes -->
+            <div class="news-card sports">
+                <div class="category">Esportes</div>
+                <div class="image-placeholder">
+                    ⚽ Imagem Esportiva
+                </div>
+                <div class="content">
+                    <h2>Time local vence campeonato regional</h2>
+                    <p>Vitória emocionante garante título após disputa acirrada.</p>
+                    <div class="meta">Por Carlos Mendes | Ontem</div>
+                    <a href="#" class="read-more">Leia mais →</a>
+                </div>
+            </div>
+
+            <!-- Notícia 3 - Tecnologia -->
+            <div class="news-card tech">
+                <div class="category">Tecnologia</div>
+                <div class="image-placeholder">
+                    💻 Imagem Tech
+                </div>
+                <div class="content">
+                    <h2>Nova inteligência artificial revoluciona mercado</h2>
+                    <p>Startup brasileira lança solução inovadora que promete transformar o setor.</p>
+                    <div class="meta">Por Ana Costa | Hoje</div>
+                    <a href="#" class="read-more">Leia mais →</a>
+                </div>
+            </div>
+
+            <!-- Notícia 4 -->
+            <div class="news-card">
+                <div class="category">Cultura</div>
+                <div class="image-placeholder">
+                    🎭 Imagem Cultural
+                </div>
+                <div class="content">
+                    <h2>Festival de cinema atrai milhares de visitantes</h2>
+                    <p>Evento celebra o cinema nacional com exibições e debates.</p>
+                    <div class="meta">Por Pedro Oliveira | 2 dias atrás</div>
+                    <a href="#" class="read-more">Leia mais →</a>
+                </div>
+            </div>
+
+            <!-- Notícia 5 - ELEMENTO RIVAL (será bloqueado) -->
+            <div class="news-card blue-section">
+                <div class="category">ESTE ELEMENTO SERÁ BLOQUEADO</div>
+                <div class="image-placeholder">
+                    🚫 Classe "blue-section"
+                </div>
+                <div class="content">
+                    <h2>Este card tem classe "blue-section"</h2>
+                    <p>
+                        Quando GaloDoido.css estiver ativo, este elemento DESAPARECERÁ
+                        por ter "blue" no nome da classe!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Notícia 6 -->
+            <div class="news-card">
+                <div class="category">Saúde</div>
+                <div class="image-placeholder">
+                    🏥 Imagem Saúde
+                </div>
+                <div class="content">
+                    <h2>Campanha de vacinação bate recorde</h2>
+                    <p>Mais de 80% da população já foi imunizada contra a gripe.</p>
+                    <div class="meta">Por Julia Fernandes | Hoje</div>
+                    <a href="#" class="read-more">Leia mais →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ANÚNCIO RIVAL (será bloqueado) -->
+        <div class="cruzeiro-ad">
+            <h3>⚠️ ESTE ANÚNCIO SERÁ BLOQUEADO ⚠️</h3>
+            <p>Elemento com classe "cruzeiro-ad" - desaparecerá quando GaloDoido.css estiver ativo!</p>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Mais Lidas</h3>
+            <ul>
+                <li><a href="#">Notícia popular número 1</a></li>
+                <li><a href="#">Notícia popular número 2</a></li>
+                <li><a href="#">Notícia popular número 3</a></li>
+                <li><a href="#">Notícia popular número 4</a></li>
+                <li><a href="#">Notícia popular número 5</a></li>
+            </ul>
+        </div>
+
+        <!-- BANNER PUBLICITÁRIO -->
+        <div class="ad-banner">
+            <h4>Publicidade Colorida</h4>
+            <p>Este banner vibrante será convertido em P&B!</p>
+        </div>
+
+        <!-- ELEMENTO COM ID SAGRADO -->
+        <div id="mineirao" style="margin: 30px 0; padding: 20px; border: 1px solid #ccc;">
+            <h3>Seção Especial: Mineirão</h3>
+            <p>
+                Este elemento tem <code>id="mineirao"</code> e receberá destaque especial
+                quando GaloDoido.css estiver ativo (borda grossa, negrito, maiúsculas)!
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Portal de Notícias 24h</strong></p>
+            <p>© 2026 - Todos os direitos reservados</p>
+            <p><small>Este é um site de demonstração para GaloDoido.css</small></p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Filtros de Imagem - GaloDoido.css</title>
+    <link rel="stylesheet" href="../../galodoido.css">
+    <style>
+        body {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .demo-section {
+            margin: 40px 0;
+            padding: 30px;
+            border: 2px solid;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .image-demo {
+            text-align: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .colorful-1 {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+        }
+
+        .colorful-2 {
+            background: linear-gradient(135deg, #feca57, #ee5a6f);
+        }
+
+        .colorful-3 {
+            background: linear-gradient(135deg, #00d2ff, #3a47d5);
+        }
+
+        .colorful-4 {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .colorful-5 {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .colorful-6 {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .logo-section {
+            text-align: center;
+            padding: 40px;
+            margin: 40px 0;
+            border: 3px solid;
+        }
+
+        .logo-section img {
+            max-width: 200px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🖼️ Demonstração de Filtros de Imagem</h1>
+
+    <div class="demo-section">
+        <h2>Filtro Grayscale Automático</h2>
+        <p>
+            Todas as imagens e elementos visuais são automaticamente convertidos para escala de cinza
+            com <code>filter: grayscale(100%) contrast(120%)</code>.
+        </p>
+
+        <div class="image-grid">
+            <div class="image-demo">
+                <div class="image-placeholder colorful-1">
+                    Gradiente Vermelho/Verde
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder colorful-2">
+                    Gradiente Amarelo/Rosa
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder colorful-3">
+                    Gradiente Azul/Roxo
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder colorful-4">
+                    Gradiente Rosa/Vermelho
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder colorful-5">
+                    Gradiente Ciano/Azul
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder colorful-6">
+                    Gradiente Verde/Ciano
+                </div>
+                <p>Convertido para P&B</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Exceção: Classe .galo-oficial</h2>
+        <p>
+            Imagens marcadas com a classe <code>.galo-oficial</code> mantêm suas cores originais.
+            Isso permite que logos e imagens oficiais do Atlético Mineiro sejam exibidos corretamente.
+        </p>
+
+        <div class="image-grid">
+            <div class="image-demo">
+                <div class="image-placeholder colorful-1">
+                    Sem classe especial
+                </div>
+                <p>❌ Fica P&B</p>
+            </div>
+
+            <div class="image-demo galo-oficial">
+                <div class="image-placeholder colorful-2">
+                    Com .galo-oficial
+                </div>
+                <p>✅ Mantém cores (se fosse &lt;img&gt;)</p>
+            </div>
+        </div>
+
+        <h3>Exemplo de uso:</h3>
+        <pre><code>&lt;img src="escudo-galo.png" class="galo-oficial" alt="Escudo do Galo"&gt;</code></pre>
+    </div>
+
+    <div class="logo-section">
+        <h2>🐓 Branding GaloDoido.css</h2>
+        <p>Logo do mascote (usado como cursor e branding)</p>
+        <img src="../../assets/galo-logo-128.png" alt="Logo Galo Doido" class="galo-oficial">
+        <p><small>Imagem marcada como .galo-oficial mantém cores</small></p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Mensagens Galoistas (Easter Eggs)</h2>
+        <p>Frases da cultura atleticana integradas no framework:</p>
+        <ul>
+            <li>🐓 "Aqui é Galo!"</li>
+            <li>⚡ "Caiu no Horto, tá morto!" (Milagre 2013)</li>
+            <li>🖤 "Eu Acredito!"</li>
+            <li>💪 "Galo Forte Vingador!"</li>
+            <li>🏆 "Massa Atleticana presente!"</li>
+            <li>😤 "Lugar de galo é ganhando!"</li>
+        </ul>
+    </div>
+
+    <p style="text-align: center; margin-top: 60px;">
+        <a href="../index.html">← Voltar para Component Library</a>
+    </p>
+
+</body>
+</html>
