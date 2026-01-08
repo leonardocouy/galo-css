@@ -44,13 +44,19 @@ Inspirado pelo mascote caótico **Galo Doido** e pela paixão da **Massa Atletic
 </html>
 ```
 
-### Método 2: Import CSS
+### Método 2: CDN via GitHub Pages
 
-```css
-@import url('galodoido.css');
+```html
+<link rel="stylesheet" href="https://leonardocouy.github.io/galo-css/galodoido.css">
 ```
 
-### Método 3: Injeção Dinâmica (Modo Troll)
+### Método 3: Import CSS
+
+```css
+@import url('https://leonardocouy.github.io/galo-css/galodoido.css');
+```
+
+### Método 4: Injeção Dinâmica (Modo Troll)
 
 Para "galoizar" qualquer site, use este bookmarklet JavaScript:
 
@@ -58,7 +64,7 @@ Para "galoizar" qualquer site, use este bookmarklet JavaScript:
 javascript:(function(){
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'https://seu-dominio.com/galodoido.css';
+    link.href = 'https://leonardocouy.github.io/galo-css/galodoido.css';
     document.head.appendChild(link);
     alert('Site GALOIZADO! Aqui é Galo! 🐓');
 })();
